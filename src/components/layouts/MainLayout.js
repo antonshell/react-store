@@ -3,6 +3,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Home from '../Home';
 import Product from '../Product';
+import NotFound from '../NotFound';
 
 import { Route } from 'react-router-dom'
 
@@ -15,9 +16,10 @@ class MainLayout extends Component {
 
             <main>
                 <Route path="/" exact component={Home} />
-                <Route path="/users" component={Product} />
+                {/*<Route path="/product" component={Product} />*/}
+                <Route path='/product/:id' component={Product}/>
+                {/*<Route path='*' component={NotFound} />*/}
             </main>
-
 
             <Footer/>
 

@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+import ProductApi from './api/ProductApi'
 
 class Product extends Component {
+
     render() {
+
+        let productId = parseInt(this.props.match.params.id, 10);
+        let product = ProductApi.get(productId);
+
         return (
             <div className="container">
 
@@ -21,7 +27,8 @@ class Product extends Component {
                         <div className="card mt-4">
                             <img className="card-img-top img-fluid" src="http://placehold.it/900x400" alt=""/>
                                 <div className="card-body">
-                                    <h3 className="card-title">Product Name</h3>
+                                    {/*<h3 className="card-title">Product Name</h3>*/}
+                                    <h3 className="card-title">{product.name}</h3>
                                     <h4>$24.99</h4>
                                     <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
                                     <span className="text-warning">★ ★ ★ ★ ☆</span>
