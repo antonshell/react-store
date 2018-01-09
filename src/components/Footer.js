@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-//import logo from '../logo.svg';
-//import './App/App.css';
 
-class Header extends Component {
+class Footer extends Component {
     render() {
         return (
             <footer className="py-5 bg-dark">
@@ -14,4 +12,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default Footer;

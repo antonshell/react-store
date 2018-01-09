@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-//import logo from '../logo.svg';
-//import './App/App.css';
 
-class Header extends Component {
+class Product extends Component {
     render() {
         return (
             <div className="container">
@@ -58,4 +56,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default Product;
