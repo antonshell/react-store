@@ -16,7 +16,6 @@ class MainLayout extends Component {
 
             <main>
                 <Route path="/" exact component={Home} />
-                {/*<Route path="/product" component={Product} />*/}
                 <Route path='/product/:id' component={Product}/>
                 {/*<Route path='*' component={NotFound} />*/}
             </main>
