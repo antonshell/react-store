@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import ProductApi from './api/ProductApi'
+import ProductApi from '../api/ProductApi'
+import ReviewsApi from '../api/ReviewsApi'
+import ReviewCard from '../ReviewCard'
 
 class Product extends Component {
 
@@ -7,6 +9,8 @@ class Product extends Component {
 
         let productId = parseInt(this.props.match.params.id, 10);
         let product = ProductApi.get(productId);
+
+        let reviews = ReviewsApi.all();
 
         return (
             <div className="container">
@@ -40,16 +44,9 @@ class Product extends Component {
                                 Product Reviews
                             </div>
                             <div className="card-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                                <small className="text-muted">Posted by Anonymous on 3/1/17</small>
-                                <hr/>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                                    <small className="text-muted">Posted by Anonymous on 3/1/17</small>
-                                    <hr/>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                                        <small className="text-muted">Posted by Anonymous on 3/1/17</small>
-                                        <hr/>
-                                            <a href="#" className="btn btn-success">Leave a Review</a>
+                                {reviews.map(function(review, i){
+                                    return <ReviewCard review={review} key={i} />;
+                                })}
                             </div>
                         </div>
 

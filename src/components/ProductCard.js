@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Product extends Component {
+class ProductCard extends Component {
     render() {
 
         let product = this.props.product;
@@ -25,4 +25,4 @@ class Product extends Component {
     }
 }
 
-export default Product;
+export default ProductCard;

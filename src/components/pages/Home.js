@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ProductApi from './api/ProductApi'
-import ProductCard from './ProductCard'
+import ProductApi from '../api/ProductApi'
+import ProductCard from '../ProductCard'
 
 class Home extends Component {
 
